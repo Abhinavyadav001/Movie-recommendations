@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-image:url('https://initiate.alphacoders.com/images/114/cropped-1920-1080-1147171.jpg?7603');
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group 
+{
+    margin-bottom: 20px;
+}
+
+.form-group label 
+{
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group input 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group input:focus 
+{
+    outline: none;
+    border-color: #6cb2eb;
+}
+
+.form-group button 
+{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6cb2eb;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover 
+{
+    background-color: #4a8ac3;
+}
+
+.form-toggle 
+{
+    margin-top: 20px;
+    color: #999;
+}
+
+.form-toggle a 
+{
+    color: #6cb2eb;
+    text-decoration: none;
+}
+
+.form-toggle a:hover 
+{
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to FILM FANATIC</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="loginButton">Login</button>
+        </div>
+        <div class="form-toggle">
+            Don't have an account? <a href="http://127.0.0.1:5000/Registration">Sign up here</a>.
+        </div>
+    </div>
+
+    <script>
+        // Add event listener to the Login button
+        document.getElementById('loginButton').addEventListener('click', function() {
+            // Redirect to another page
+            window.location.href = "http://127.0.0.1:3000/homepage.html"; // Replace with your desired page URL
+        });
+    </script>
+</body>
+</html>

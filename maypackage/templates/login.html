@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% include "nave.html" %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    <ul class=flashes>
+        {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/login" method="POST" class="border rounded p-4" onsubmit="return handleFormSubmit()">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        {{ form.username.label(class="form-control-label") }}
+                        {% if form.username.errors %}
+                            {{ form.username(class="form-control is-invalid") }}
+                            {% for error in form.username.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        {% else %}
+                            {{ form.username(class='form-control') }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label(class="form-control-label") }}
+                        {% if form.password.errors %}
+                            {{ form.password(class="form-control is-invalid") }}
+                            {% for error in form.password.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        {% else %}
+                            {{ form.password(class='form-control') }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-warning") }}
+                    </div>
+                </fieldset>
+            </form>
+            <div id="message-container"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function handleFormSubmit() {
+        // Perform any necessary form validation
+        // For simplicity, let's assume you have a variable 'passwordCorrect' indicating whether the password is correct
+
+        // Check if the password is correct (replace this condition with your actual validation logic)
+        var passwordCorrect = true; // Replace this with your actual validation logic
+
+        var messageContainer = document.getElementById("message-container");
+
+        if (passwordCorrect) {
+            // Display a success message for correct password
+            messageContainer.innerHTML = '<div class="text-success">Login successful. Redirecting to the home page...</div>';
+
+            // Redirect to the desired page if the password is correct after a delay
+            setTimeout(function () {
+                window.location.href = "http://127.0.0.1:3000/maypackage/templates/homepage.html";
+            }, 2000); // Delay for 2 seconds (adjust as needed)
+        } else {
+            // Display an error message for incorrect password
+            messageContainer.innerHTML = '<div class="text-danger">Incorrect password. Please try again.</div>';
+            return false; // Prevent the default form submission
+        }
+    }
+</script>
+
+
+{% endblock content %}

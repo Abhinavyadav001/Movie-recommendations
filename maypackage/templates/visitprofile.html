@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+
+    <h2>User Information</h2>
+    <p><strong>Username:</strong> <span id="username"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+    <p><strong>Birthdate:</strong> <span id="birthdate"></span></p>
+
+    <h2>Bio</h2>
+    <p id="bio"></p>
+
+    <script>
+        // This script is for demonstration purposes only
+        // In a real-world application, you would fetch the data from your backend
+        document.getElementById("username").innerText = "JohnDoe";
+        document.getElementById("email").innerText = "johndoe@example.com";
+        document.getElementById("phone").innerText = "123-456-7890";
+        document.getElementById("birthdate").innerText = "1990-01-01";
+        document.getElementById("bio").innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac elit eu magna dictum tristique.";
+    </script>
+</body>
+</html>

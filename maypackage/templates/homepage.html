@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body 
+        {
+            background-image: url('https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQav6zzBKAlZMzW8wYrfakV8TrUczxNiAi0LzhWZ10C5U8xCrXbTs5FYYQdRosGX81PZAZV74Csr5ZAT2v92bRIJIu4Xay6cbhDLeWYvTuDNPLwFzbqiJbjssAN_0YI2LMd29xuZMEVrC5HXIVDO8snB5u4A.jpg?r=4de');
+            background-size: cover;
+            background-color: black;
+        }
+        header 
+        {
+            text-align: center;
+        }
+        nav 
+        {
+            background-color:rgba(17, 175, 238, 0.7); /* Adding some transparency to the background color */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a 
+        {
+            text-decoration: none;
+            color:white;
+            padding: 5px 20px;
+        }
+        nav a:not(:first-child) 
+        {
+            margin-left: 20px;
+        }
+        h1 
+        {
+            font-family: 'Bebas Neue', cursive;
+            font-style: italic;
+            font-weight: 800;
+            text-decoration: dotted;
+            color: yellow;
+        }
+        #moving-text-container 
+        {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        #moving-text 
+        {
+            display: inline-block;
+            animation: move 10s linear infinite;
+            color:yellow;
+            font-size:70PX;
+        }
+        @keyframes move 
+        {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FILM  FANATIC</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="http://localhost:8501/">Search</a>
+        <a href="http://127.0.0.1:3000/maypackage/templates/about.html">About us</a>
+        <a href="http://127.0.0.1:5000/login">Login</a>
+        <a href="http://127.0.0.1:3000/maypackage/templates/contactus.html">Contact Us</a>
+    </nav>
+    <div id="moving-text-container">
+        <p id="moving-text">Welcome to FILM FANATIC</p>
+    </div>
+</body>
+</html>
